@@ -1,0 +1,116 @@
+#app-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    grid-template-rows: auto repeat(5, 1fr); 
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#app-calendar .day-name, 
+#app-calendar .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #fff;
+    aspect-ratio: 1; /* Ensures square cells */
+}
+
+#app-calendar .day-name {
+    font-weight: bold;
+    background-color: #1E2022;
+    color: #f8f9fa;
+}
+
+#app-calendar .day {
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#app-calendar .day.weekend {
+    background-color: #f8f9fa;
+    color: #646c72;
+}
+
+#app-calendar {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#app-calendar .day:hover,
+#app-calendar .day.weekend.hover {
+    background-color: #f1f7ff;
+    color: #007bff;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+#controls select, #controls input, #controls button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+#calendar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    gap: 20px;
+}
+#app-calendar {
+    flex: 3;
+}
+
+#day-info {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+#day-info .time-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#day-info .time-slot:last-child {
+    border-bottom: none;
+}
+
+#day-info .time-slot span {
+    font-weight: bold;
+}
+
+#day-info .time-slot .task {
+    flex-grow: 1;
+    margin-left: 10px;
+    text-align: left;
+    color: #555;
+    font-size: 12px;
+    font-style: italic;
+}
